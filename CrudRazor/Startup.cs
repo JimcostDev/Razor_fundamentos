@@ -1,3 +1,4 @@
+using CrudRazor.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ namespace CrudRazor
         {
             //configurar el contexto de datos
             var connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<Models.ApplicationDbContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
             services.AddRazorPages();
         }
 
