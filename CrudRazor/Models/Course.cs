@@ -10,8 +10,14 @@ namespace CrudRazor.Models
     {
         [Key]
         public int ID { get; set; }
+        [Required]
+        [Display(Name ="Nombre de curso")]
         public string Name { get; set; }
+        [Required]
+        [Display(Name = "Cantidad de clases")]
         public int NumberClasses { get; set; }
+        [Required]
+        [Display(Name = "Precio")]
         public double Price { get; set; }
 
     }
