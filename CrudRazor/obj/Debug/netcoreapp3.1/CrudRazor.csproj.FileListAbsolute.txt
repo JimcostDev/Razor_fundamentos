@@ -76,3 +76,4 @@ C:\Users\Ronaldo Jimenez\Desktop\Cursos\Udemy\Razor_fundamental\CrudRazor\bin\De
 C:\Users\Ronaldo Jimenez\Desktop\Cursos\Udemy\Razor_fundamental\CrudRazor\obj\Debug\netcoreapp3.1\CrudRazor.csproj.CoreCompileInputs.cache
 C:\Users\Ronaldo Jimenez\Desktop\Cursos\Udemy\Razor_fundamental\CrudRazor\obj\Debug\netcoreapp3.1\CrudRazor.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ronaldo Jimenez\Desktop\Cursos\Udemy\Razor_fundamental\CrudRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Courses\Index.cshtml.g.cs
+C:\Users\Ronaldo Jimenez\Desktop\Cursos\Udemy\Razor_fundamental\CrudRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Courses\Create.cshtml.g.cs
