@@ -11,3 +11,41 @@
         <a asp-page="Create" class="btn btn-primary">Crear nuevo curso</a>
     </div>
 </div>
+<form method="post">
+    @if (Model.Courses.Count() > 0)
+    {
+        <br /><br />
+        <table class="table table-striped border">
+            <tr class="table-secondary">
+                <th>
+                    @Html.DisplayFor(m => m.Courses.FirstOrDefault().Name)
+                </th>
+                <th>
+                    @Html.DisplayFor(m => m.Courses.FirstOrDefault().NumberClasses)
+                </th>
+                <th>
+                    @Html.DisplayFor(m => m.Courses.FirstOrDefault().Price)
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
+            @foreach (var item in Model.Courses)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.Name)</td>
+                    <td>@Html.DisplayFor(m => item.NumberClasses)</td>
+                    <td>@Html.DisplayFor(m => item.Price)</td>
+                    <td>
+                        <button asp-page-handler="Delete" asp-route-id="@item.ID" onclick="return confirm('Esta seguro de querer borrar el curso?')" class="btn btn-danger btn-sm">Borrar</button>
+                        <a asp-route-id="@item.ID" asp-page="Edit" class="btn btn-success btn-sm">Editar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>No hay cursos disponibles</p>
+    }
+</form>
