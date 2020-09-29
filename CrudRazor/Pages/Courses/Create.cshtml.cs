@@ -10,10 +10,27 @@ namespace CrudRazor.Pages.Courses
 {
     public class CreateModel : PageModel
     {
+        private readonly ApplicationDbContext _db;
+
+        public CreateModel(ApplicationDbContext db)
+        {
+            _db = db;
+        }
         [BindProperty]
         public Course Course { get; set; }
         public void OnGet()
         {
+        }
+        public async Task<IActionResult> OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _db.Add(Course);
+            await _db.SaveChangesAsync();
+            return RedirectToPage("Index");
         }
     }
 }
