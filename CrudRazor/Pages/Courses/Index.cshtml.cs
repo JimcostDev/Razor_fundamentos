@@ -27,5 +27,18 @@ namespace CrudRazor.Pages.Courses
             Courses = await _db.Courses.ToListAsync();
         }
 
+        public async Task<IActionResult> OnPostDelete(int id)
+        {
+            var course = await _db.Courses.FindAsync(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            _db.Courses.Remove(course);
+            await _db.SaveChangesAsync();
+            return RedirectToPage("Index");
+        }
+
     }
 }

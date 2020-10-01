@@ -28,7 +28,7 @@ namespace CrudRazor.Pages.Courses
             if (ModelState.IsValid)
             {
                 var CursoDesdeDb = await _db.Courses.FindAsync(Course.ID);
-                CursoDesdeDb.Name = Course.Name;
+                CursoDesdeDb.Name= Course.Name;
                 CursoDesdeDb.NumberClasses = Course.NumberClasses;
                 CursoDesdeDb.Price = Course.Price;
 
