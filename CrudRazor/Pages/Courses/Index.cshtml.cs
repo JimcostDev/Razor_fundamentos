@@ -21,7 +21,8 @@ namespace CrudRazor.Pages.Courses
 
         public IEnumerable<Course> Courses { get; set; }
 
-        
+        [TempData]
+        public string Message { get; set; }
         public async Task OnGet()
         {
             Courses = await _db.Courses.ToListAsync();
@@ -37,6 +38,8 @@ namespace CrudRazor.Pages.Courses
 
             _db.Courses.Remove(course);
             await _db.SaveChangesAsync();
+
+            Message = "Curso borrado correctamente";
             return RedirectToPage("Index");
         }
 

@@ -18,6 +18,8 @@ namespace CrudRazor.Pages.Courses
         }
         [BindProperty]
         public Course Course { get; set; }
+        [TempData]
+        public string Message { get; set; }
         public void OnGet()
         {
         }
@@ -30,6 +32,8 @@ namespace CrudRazor.Pages.Courses
 
             _db.Add(Course);
             await _db.SaveChangesAsync();
+
+            Message = "Curso creado correctamente";
             return RedirectToPage("Index");
         }
     }

@@ -19,6 +19,8 @@ namespace CrudRazor.Pages.Courses
 
         [BindProperty]// vincular con su respectiva vista
         public Course Course { get; set; }
+        [TempData]
+        public string Message { get; set; }
         public async Task OnGet(int id)
         {
             Course = await _db.Courses.FindAsync(id);
@@ -33,6 +35,8 @@ namespace CrudRazor.Pages.Courses
                 CursoDesdeDb.Price = Course.Price;
 
                 await _db.SaveChangesAsync();
+
+                Message = "Curso actualizado correctamente";
                 return RedirectToPage("Index");
             }
             return RedirectToPage();
